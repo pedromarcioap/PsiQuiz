@@ -1,33 +1,34 @@
-# Projeto Quiz com Geração de Perguntas por IA
+# PsiQuiz - Quiz Interativo de Psicologia com Geração de Perguntas por IA
 
-Este projeto é um Quiz interativo desenvolvido em React que permite gerar novas perguntas usando Inteligência Artificial (IA), editar o conteúdo do Quiz diretamente através de uma interface JSON e salvar as alterações localmente no navegador.
+**Um quiz de psicologia dinâmico e personalizável, agora facilmente acessível como um aplicativo web!**
 
-## Funcionalidades
+## Visão Geral
 
-*   **Geração de Perguntas por IA:** Utilize OpenRouter ou Google AI Studio para gerar novas perguntas com base em um prompt editável.
-*   **Prompt do Sistema Editável:** Personalize o prompt usado para direcionar a geração de perguntas pela IA.
-*   **Interface de Edição JSON Simplificada:** Edite o arquivo `quizData.json` diretamente na interface para modificar perguntas, respostas e configurações.
-*   **Persistência dos Dados:** As alterações são salvas no `localStorage` do navegador, garantindo que os dados não sejam perdidos ao recarregar a página.
-*   **Adicionar Perguntas Geradas ao Quiz:** Inclua as perguntas geradas pela IA ao conjunto de perguntas existentes no Quiz.
-*   **Lógica do Quiz:** Responda às perguntas, calcule a pontuação e veja o resultado final.
+O PsiQuiz foi projetado para ser uma ferramenta envolvente e educacional para qualquer pessoa interessada em psicologia. Ele apresenta geração de perguntas alimentada por IA, conteúdo personalizável por meio de edição JSON e persistência de dados local. Esta versão é otimizada para fácil implantação e acesso via GitHub Pages.
+
+## Funcionalidades Principais
+
+*   **Geração de Perguntas por IA:** Usa OpenRouter ou Google AI Studio para criar novas perguntas de quiz dinamicamente.
+*   **Conteúdo Personalizável:** Modifique facilmente o conteúdo do quiz (perguntas, respostas, feedback) editando o arquivo `quizData.json`.
+*   **Editor JSON Simplificado:** Uma interface amigável permite a modificação direta do arquivo `quizData.json`.
+*   **Persistência de Dados Local:** As alterações são salvas no `localStorage` do navegador.
+*   **Interface de Quiz Interativa:** Formato de quiz envolvente com rastreamento de progresso e feedback imediato.
+*   **Implantação Simples:** Otimizado para fácil implantação no GitHub Pages (ou hospedagem estática similar).
+
+## Demonstração ao Vivo
+
+[https://opedromarcio.github.io/PsiQuiz/](https://opedromarcio.github.io/PsiQuiz/) (Substitua pelo seu URL real após a implantação)
 
 ## Tecnologias Utilizadas
 
-*   **React:** Biblioteca JavaScript para construir interfaces de usuário.
-*   **OpenAI API (via OpenRouter):** Plataforma para gerar texto com modelos de linguagem.
-*   **Google AI Studio (PaLM API):** Plataforma para gerar texto com modelos de linguagem do Google.
-*   **openai (Node.js library):** Biblioteca para interagir com a API da OpenAI (OpenRouter).
-*   **@google-ai/generativelanguage (Node.js library):** Biblioteca para interagir com a Google AI Studio (PaLM API).
+*   React
+*   API OpenAI (via OpenRouter) ou Google AI Studio (API PaLM)
 
 ## Pré-requisitos
 
-*   **Node.js:** Garanta que o Node.js esteja instalado em sua máquina. Você pode baixá-lo em [https://nodejs.org/](https://nodejs.org/).
-*   **npm (Node Package Manager):** O npm é instalado automaticamente com o Node.js.
-*   **Chaves de API:**
-    *   **OpenRouter API Key:** Obtenha uma chave em [https://openrouter.ai/](https://openrouter.ai/).
-    *   **Google AI Studio API Key:** Obtenha uma chave em [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey).
+*   Nenhum! Esta versão foi projetada para ser usada diretamente em um navegador web, sem nenhuma instalação local. Você precisará de chaves de API para os serviços de IA.
 
-## Configuração e Execução
+## Primeiros Passos
 
 1.  **Clone o Repositório:**
 
@@ -36,66 +37,35 @@ Este projeto é um Quiz interativo desenvolvido em React que permite gerar novas
     cd [nome do seu repositório]
     ```
 
-2.  **Instale as Dependências:**
+2.  **Configure as Chaves de API:**
+
+    *   **AVISO DE SEGURANÇA IMPORTANTE:** Este aplicativo é apenas do lado do cliente. **NÃO coloque suas chaves de API diretamente no repositório.** Insira manualmente suas chaves de API OpenRouter ou Google AI Studio nos campos de entrada fornecidos na interface do aplicativo. Esteja ciente de que expor chaves de API em aplicativos do lado do cliente representa um risco de segurança.
+
+3.  **Construa o Aplicativo:**
 
     ```bash
     npm install
-    npm install openai @google-ai/generativelanguage
+    npm run build
     ```
 
-3.  **Configure as Chaves de API:**
+4.  **Implante no GitHub Pages:**
 
-    *   No arquivo `Quiz.tsx`, localize os componentes `<IAConfig>` e insira suas chaves de API nos campos correspondentes na interface do usuário.
+    *   Vá para as configurações do seu repositório no GitHub.
+    *   Role para baixo até a seção "GitHub Pages".
+    *   Em "Source", selecione a pasta `build` no branch `main` ou `master`.
+    *   **Importante:** Adicione `"homepage": "https://<seu-nome-de-usuário>.github.io/<seu-nome-de-repositório>/"` ao seu arquivo `package.json`.
+    *   O GitHub Pages fornecerá um URL para seu site implantado.
 
-4.  **Execute o Projeto:**
+## Uso
 
-    ```bash
-    npm start
-    ```
+1.  Acesse o quiz implantado através do seu URL do GitHub Pages (por exemplo, `https://opedromarcio.github.io/PsiQuiz/`).
+2.  Insira sua chave de API OpenRouter ou Google AI Studio nas configurações.
+3.  Comece a fazer o quiz! Gere novas perguntas, edite o JSON e personalize sua experiência.
 
-    O projeto será aberto automaticamente no seu navegador (geralmente em `http://localhost:3000`).
+## Contribuindo
 
-## Estrutura de Arquivos
+[Adicione as diretrizes de contribuição aqui se quiser que outros contribuam]
 
-*   **`src/Quiz.tsx`:** Componente principal do Quiz, responsável por controlar o estado do Quiz, exibir as perguntas, lidar com as respostas e gerar novas perguntas com IA.
-*   **`src/Pergunta.tsx`:** Componente para exibir cada pergunta individualmente, com as opções de resposta.
-*   **`src/IAConfig.tsx`:** Componente para configurar a API de IA (OpenRouter ou Google AI Studio) e inserir a chave da API.
-*   **`src/JsonEditor.tsx`:** Componente simples para editar o arquivo `quizData.json` diretamente na interface.
-*   **`src/ia-utils.ts`:** Funções para interagir com as APIs de IA (OpenRouter e Google AI Studio).
-*   **`src/quizData.json`:** Arquivo JSON que contém as perguntas, respostas e configurações do Quiz.
-*   **`public/index.html`:** Arquivo HTML principal que renderiza o aplicativo React.
+## Licença
 
-## Utilização
-
-1.  **Respondendo ao Quiz:**
-    *   Leia a pergunta e selecione a resposta correta.
-    *   Clique no botão "Próxima Pergunta" para avançar.
-    *   Ao final, clique em "Finalizar Quiz" para ver sua pontuação.
-
-2.  **Gerando Novas Perguntas com IA:**
-    *   Selecione a API de IA desejada (OpenRouter ou Google AI Studio) no componente `<IAConfig>`.
-    *   Insira sua chave de API no campo correspondente.
-    *   Edite o "Prompt do Sistema" para direcionar a geração de perguntas.
-    *   Clique no botão "Gerar Nova Pergunta".
-    *   Se a pergunta for gerada com sucesso, ela será exibida na tela.
-    *   Clique no botão "Adicionar Pergunta ao Quiz" para adicionar a pergunta ao conjunto de perguntas existentes.
-
-3.  **Editando o JSON do Quiz:**
-    *   Clique no botão "Editar JSON" para abrir o editor JSON.
-    *   Edite o JSON diretamente no campo de texto.
-    *   Clique no botão "Salvar JSON" para salvar as alterações.
-    *   **Cuidado:** Certifique-se de que o JSON seja válido antes de salvar.
-
-## Considerações Finais
-
-Este projeto é um ponto de partida para criar um Quiz interativo e personalizável com geração de perguntas por IA. Você pode expandir este projeto adicionando mais recursos, como:
-
-*   Opções de configuração avançadas para as APIs de IA (seleção de modelo, número máximo de tokens, etc.).
-*   Um sistema para salvar as perguntas geradas pela IA em um banco de dados.
-*   Uma interface de usuário mais amigável para editar o JSON do Quiz.
-*   Suporte para diferentes tipos de perguntas (múltipla escolha, verdadeiro/falso, etc.).
-
-Lembre-se de monitorar o uso das APIs de IA e implementar medidas para evitar o uso abusivo ou não autorizado.
-
-**Data de Criação:** 2025-06-05 20:20:22 (UTC)
-**Usuário:** pedromarcioap
+[Adicione informações sobre a licença aqui]

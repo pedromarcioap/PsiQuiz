@@ -1,0 +1,30 @@
+{
+  "systemPrompt": "Você é um professor de psicologia criando um quiz para seus alunos. As perguntas devem ser objetivas e baseadas no material do curso.",
+  "quizTitle": "Quiz de Psicologia",
+  "questions": [
+    {
+      "text": "A Psicologia é um campo de conhecimento caracterizado por sua 'multifacetada e multideterminada condição', abrigando diversas correntes de pensamento e formas de conceber seu objeto de estudo e campo de atuação. Essa descrição implica que:",
+      "options": [
+        "A Psicologia possui uma abordagem unificada e consensual em relação ao seu objeto de estudo.",
+        "A diversidade de abordagens teóricas enriquece a compreensão dos fenômenos psicológicos.",
+        "A complexidade da Psicologia dificulta a sua aplicação prática.",
+        "A fragmentação teórica impede o desenvolvimento de uma ciência psicológica coerente."
+      ],
+      "answer": 1,
+      "category": "fácil",
+      "feedback": "A diversidade de abordagens é uma característica fundamental da Psicologia, permitindo uma compreensão mais ampla dos fenômenos."
+    },
+    {
+      "text": "Segundo a abordagem behaviorista, o comportamento humano é primariamente influenciado por:",
+      "options": [
+        "Processos mentais inconscientes.",
+        "Experiências passadas e condicionamento.",
+        "Estruturas cerebrais inatas.",
+        "Impulsos biológicos."
+      ],
+      "answer": 1,
+      "category": "médio",
+      "feedback": "O behaviorismo enfatiza o papel do aprendizado e do condicionamento na formação do comportamento."
+    }
+  ]
+}
